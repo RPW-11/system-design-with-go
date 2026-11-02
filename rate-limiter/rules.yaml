@@ -1,0 +1,11 @@
+rules:
+- method: GET
+  path: /api/hello
+  limit: 5
+  unit: minute
+  on_limit: drop
+- method: POST
+  path: /api/messages
+  limit: 10
+  unit: second
+  on_limit: queue
